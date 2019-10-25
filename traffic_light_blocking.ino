@@ -13,6 +13,7 @@ int red_yellow_phase_time = 5000;
 int green_phase_time = 10000;
 int green_blinking_time = 1000;
 int green_blinking_interval = 5;
+int yellow_phase_time = 1000;
 
 void setup(){
   pinMode(red_led, OUTPUT);
@@ -42,4 +43,9 @@ void loop(){
     digitalWrite(green_led,LOW);
     delay(green_blinking_time);
   }
+
+  //yellow phase
+  digitalWrite(yellow_led,HIGH);
+  delay(yellow_phase_time);
+  digitalWrite(yellow_led,LOW);
 }
