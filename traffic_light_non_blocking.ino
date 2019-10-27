@@ -18,6 +18,9 @@ int yellow_phase_time = 1000;
 
 //non blocking variables
 int traffic_light_state=0;
+unsigned long time_since_phase_switch=0;
+unsigned long curr_time=0;
+unsigned long old_curr_time=0;
 /*
 * state of the traffic_light:
 * 0 = red_phase
@@ -35,7 +38,23 @@ void setup(){
 void loop(){
 
 }
-
 void traffic_light(){
+  //getting the current runtime
+  curr_time = millis();
+  //adding new the time_since_phase_switch
+  time_since_phase_switch = time_since_phase_switch + (curr_time - old_curr_time);
+  //checking the state with switch:
+  //in case calculate the time
+  switch (traffic_light_state) {
+    case 0: break;
+      if (time_since_phase_switch > red_phase_time) {
+        /* code */
+      }
+    case 1: break;
+    case 2: break;
+    case 3: break;
+    case 4: break;
+    default:
+  }
 
 }
